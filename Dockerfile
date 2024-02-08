@@ -5,4 +5,4 @@ LABEL name="gcloud-ci-cd-test"
 
 WORKDIR /tmp
 
-CMD ["echo","hola mundo"]
+CMD ["top"]

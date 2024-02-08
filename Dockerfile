@@ -6,7 +6,7 @@ LABEL name="gcloud-ci-cd-test"
 
 WORKDIR /app
 
-EXPOSE 8080
+EXPOSE 8081
 
 ADD . /app
 

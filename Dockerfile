@@ -6,6 +6,8 @@ LABEL name="gcloud-ci-cd-test"
 
 WORKDIR /app
 
+EXPOSE 8080
+
 ADD . /app
 
 CMD ["node", "server.js"]

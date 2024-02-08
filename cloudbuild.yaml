@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/cdt-principal/test-cloud/vitalmex-ci-cd-test:$SHORT_SHA', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-central1-docker.pkg.dev/cdt-principal/test-cloud/vitalmex-ci-cd-test:$SHORT_SHA']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'vital1', '--platform=managed', '--allow-unauthenticated', '--region=us-central1', '--image=us-central1-docker.pkg.dev/cdt-principal/test-cloud/vitalmex-ci-cd-test:$SHORT_SHA']

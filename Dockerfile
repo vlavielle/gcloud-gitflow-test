@@ -1,8 +1,11 @@
-FROM hello-world
+FROM node:13-slim
+
 LABEL version="1.0"
 LABEL description="gcloud ci/cd test"
 LABEL name="gcloud-ci-cd-test"
 
-WORKDIR /tmp
+WORKDIR /app
 
-CMD ["echo","hola mundo"]
+ADD . /app
+
+CMD ["node", "server.js"]
